@@ -1,5 +1,5 @@
 function init() {  
-  if (ScriptApp.getScriptTriggers().length == 0) {
+  if (ScriptApp.getProjectTriggers().length == 0) {
     // Set up a monitor that triggers every 5 minutes
     ScriptApp.newTrigger("checkForChange")
       .timeBased().everyMinutes(5).create();
@@ -31,12 +31,12 @@ function checkForChange() {
     
     if(cell.getValue() == ''){
       cell.setValue(text);
-      MailApp.sendEmail('biswasb007@gmail.com', 'ktu alert', 'New change for '+find)
+      MailApp.sendEmail('biswasb007@gmail.com', 'ktu alert', 'New change for '+find+'\n'+text)
     }
     
     else if(cell.getValue() != text){
       cell.setValue(text);
-      MailApp.sendEmail('biswasb007@gmail.com', 'ktu alert', 'New change for '+find)
+      MailApp.sendEmail('biswasb007@gmail.com', 'ktu alert', 'New change for '+find+'\n'+text)
     }
   }
   
