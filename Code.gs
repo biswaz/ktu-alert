@@ -7,6 +7,7 @@ function init() {
   }  
 }
 
+// Checks for change in the website
 function checkForChange() {
   
   //The string to search for
