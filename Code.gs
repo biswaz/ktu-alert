@@ -1,3 +1,5 @@
+hello
+
 function init() {  
   if (ScriptApp.getProjectTriggers().length == 0) {
     // Set up a monitor that triggers every 5 minutes
