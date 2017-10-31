@@ -1,4 +1,3 @@
-hello
 
 function init() {  
   if (ScriptApp.getProjectTriggers().length == 0) {
