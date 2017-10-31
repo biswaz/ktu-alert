@@ -1,5 +1,6 @@
-
+//Initialize the program
 function init() {  
+    // Check if any triggers are already present
   if (ScriptApp.getProjectTriggers().length == 0) {
     // Set up a monitor that triggers every 5 minutes
     ScriptApp.newTrigger("checkForChange")
@@ -12,11 +13,13 @@ function checkForChange() {
   //The string to search for
   var find = 'S3';
   
+  //The url to be checked for any changes
   var url = 'https://ktu.edu.in/eu/core/announcements.htm';
   var html = UrlFetchApp.fetch(url).getContentText();
  
   html = html.substring(0,15000);
   
+  //Create a regular expression to search for in the webpage
   var regex = /<b>/gi, result, indices = [];
   while ( (result = regex.exec(html)) ) {
     indices.push(result.index);
