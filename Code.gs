@@ -33,13 +33,9 @@ function checkForChange() {
     
     var sheet = SpreadsheetApp.getActiveSheet();  
     var cell = sheet.getRange(1,1);
-    
-    if(cell.getValue() == ''){
-      cell.setValue(text);
-      MailApp.sendEmail('biswasb007@gmail.com', 'ktu alert', 'New change for '+find+'\n'+text)
-    }
-    
-    else if(cell.getValue() != text){
+    var cellValue = cell.getValue();
+      
+    if(cellValue == '' || cellValue != text){
       cell.setValue(text);
       MailApp.sendEmail('biswasb007@gmail.com', 'ktu alert', 'New change for '+find+'\n'+text)
     }
