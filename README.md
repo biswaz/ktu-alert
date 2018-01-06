@@ -1,5 +1,5 @@
 # ktu-alert
-Google app script to email notify when a new notification arrives at ktu.edu.in, Kerala Technological University's official website for the given semester
+Google app script to email notify when a new notification arrives for the given semester at ktu.edu.in, Kerala Technological University's official website 
 
 Installation
 
